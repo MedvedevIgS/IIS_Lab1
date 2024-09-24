@@ -1,0 +1,5 @@
+pandas
+bokeh
+matplotlib
+seaborn
+pickle4
