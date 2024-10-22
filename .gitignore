@@ -2,3 +2,5 @@
 *.pkl
 *.csv
 test.py
+mlartifacts
+mlruns.db

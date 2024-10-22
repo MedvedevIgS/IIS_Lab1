@@ -3,3 +3,9 @@ bokeh
 matplotlib
 seaborn
 pickle4
+mlflow==2.16.0
+scikit-learn
+catboost
+numpy
+mlxtend
+optuna
