@@ -1,1 +1,1 @@
-['num__norm_Price', 'cat__Gender', 'cat__Dealer_Region', 'kbin__Year']
+['num__Year', 'num__norm_Price', 'cat__Gender', 'poly__Year^2']

@@ -9,3 +9,5 @@ catboost
 numpy
 mlxtend
 optuna
+fastapi
+uvicorn

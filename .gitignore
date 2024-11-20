@@ -4,3 +4,4 @@
 test.py
 mlartifacts
 mlruns.db
+__pycache__
