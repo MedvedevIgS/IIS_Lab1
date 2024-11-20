@@ -56,7 +56,7 @@ sh mlflow/script_1.sh
 ```
 Сервис MLFlow будет доступен по адресу: http://localhost:5000
 
-![metrics](eda/metrics.png)
+![metrics](edu/metrics.png)
 
 Лучший результат показала модель optuna_model, импользующая RandomForestRegressor.
 
