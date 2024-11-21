@@ -58,6 +58,14 @@ sh mlflow/script_1.sh
 
 ![metrics](edu/metrics.png)
 
+Зарегистрированные версии моделей
+
+![Models1](edu/Models1.png)
+
+Текстовый файл MLModel
+
+![MLModels](edu/MLModels.png)
+
 Лучший результат показала модель optuna_model, импользующая RandomForestRegressor.
 
 Метки качества модели:
