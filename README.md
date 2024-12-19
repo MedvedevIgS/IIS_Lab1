@@ -48,7 +48,7 @@
         * влияние конфигурации авто на его стоимость
 * Обработанная выборка сохранена в файл ./data/clean_data.pkl
 
-#### MLFlow
+#### MLFlowf
 ------------------
 ##### Запуск MLFlow
 ```
@@ -75,3 +75,46 @@ sh mlflow/script_1.sh
 * mse - 6135.125
 
 Эта модель, показавшая наилучшый результат была обучена на всей выборке. Run_id модкли - 58207c8f69904d6fa6dac49f99f9d963.
+
+#### Создание сервиса
+------------------
+Сервис представляет собой API - сервис, в который с помощью http запросов можно получить доступ к предсказаниям модели.
+Сервис можно запустить из docker контейнера. Для этого необходимо:
+
+* Запуститьскрипт загрузки модели:
+    * Перейти в папку `services/models/`.
+    * Запустить скрипт загрузки модели `get_model.py`.
+    * Для выбора другой модели нужно ввести соответствующий `Run ID` модели в переменную `RUN_NAME` в скрипте `get_model.py`.
+    * `RUN_NAME` нужно брать в MLFlow.
+* Запустить docker контейнер:
+    * Перейти в папку `services/ml_service`.
+    * Ввести команду `docker build . --tag estate_model:0` для сборки образа.
+    * Ввести команду `docker build . --tag estate_model:0` для запуска образа.
+* Перейти по адресу http://localhost:8001/docs.
+
+Для проверки, что сервис работает, необходимо проверить на тестовых данных:
+```
+{
+    "Date": "4/13/2022",	
+    "Gender": "Male",
+    "Annual Income": 900000.0,	
+    "Dealer_Name": "Iceberg Rentals",
+    "Company": "Mercury",
+    "Model": "Mercury Sable",
+    "Color": "Red",	
+    "Price ($)": 39000.0,
+    "Dealer_No": "53546-9427",
+    "Body Style": "Sedan",	
+    "Dealer_Region": "Janesville",
+    "Config": "DoubleÂ Overhead Camshaft Auto",
+    "Month": 4,	
+    "Year": 2022,	
+    "Price/Income": 0.043333,	
+    "norm_Income": 0.079529,
+    "norm_Price": 0.440191
+}
+```
+Нужно нажать кнопку `try it now`, в поле `flat_id` ввести любое целое число, в Request body ввести тело запроса (тестовые данные).
+![Service](pick/Service.png)
+Если в Responses выдется ответ с кодом 200, то сервис работает исправно.
+![Responses](pick/Responses.png)
