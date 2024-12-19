@@ -117,4 +117,4 @@ sh mlflow/script_1.sh
 Нужно нажать кнопку `try it now`, в поле `flat_id` ввести любое целое число, в Request body ввести тело запроса (тестовые данные).
 ![Service](pick/Service.png)
 Если в Responses выдется ответ с кодом 200, то сервис работает исправно.
-![Responses](pick/Responses.png)
+![Responses](pick/Responses.png.png)
